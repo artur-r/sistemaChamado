@@ -3,9 +3,6 @@
 session_start();
 
 require_once('config.php');
-if (!empty($_SESSION['usuario'])) {
-    header("location:index.php");
-}
 ?>
 
 <!DOCTYPE html>
@@ -65,6 +62,7 @@ if (!empty($_SESSION['usuario'])) {
     <script src="<?= (BASE_URL . 'assets/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
     <script src="<?= (BASE_URL . 'assets/customizado.js'); ?>"></script>
 
+    
 </body>
 
 </html>

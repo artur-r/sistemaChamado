@@ -48,9 +48,7 @@ mysqli_close($conn);
 
 ?>
 
-    <a href="index.php">Voltar</a>
-    <button onclick="javascript:history.go(-1)">Voltar</button>
-
+    <a href="index.php">Voltar para o sistema</a>
 
 
 

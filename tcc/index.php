@@ -9,8 +9,6 @@
 
 <body>
     <a href="cadastroChamado.php">Novo chamado</a>
-
-
     <div>
         <table>
 
@@ -29,7 +27,7 @@
                 <?php
 
                 include_once("conexao.php");
-
+                include_once("verifica_login.php");
                 
                 //consulta da tabela 
                 $consulta = "SELECT * FROM chamados ORDER BY id_chamado DESC";
@@ -37,7 +35,7 @@
 
                 while ($dados = mysqli_fetch_assoc($resultado)) {
                     echo "<tr>";
-                    echo "<td>" . $dados['id_chamado'] . "</td>";
+                    echo "<td>" . '<a href="alterar_chamado.php">' . $dados['id_chamado'] . '</a>' . "</td>";
                     echo "<td>" . $dados['titulo_chamado'] . "</td>";
                     echo "<td>" . $dados['descricao'] . "</td>";
                     echo "<td>" . $dados['whats'] . "</td>";
@@ -45,14 +43,21 @@
                     echo "<td>" . $dados['hora_abertura'] . "</td>";
                     echo "<td>" . $dados['usuario_abertura'] . "</td>";
                     echo "<td>" . $dados['categoria_chamado'] . "</td>";
+                    echo "<td><a href='finalizar_chamado.php?id=" . $dados['id_chamado'] . "'>Finalizar</a></td>";
                     echo "</tr>";
                 }
+
+                if($_SESSION['setor'] == 'Administrador'){
+                    echo "<a href=\"cad_usuario.php\">Cadastrar novo usuário </p>";
+                }
+                //pra verificar se a sessão está funcionando
+                // echo $_SESSION['usuario']
 
                 ?>
             </tr>
         </table>
     </div>
-
+           
 </body>
 
 </html>

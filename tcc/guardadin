@@ -93,3 +93,5 @@ if ($result_move_chamado) {
 // Fechar a conexão com o banco de dados
 $conn->close();
 ?>
+
+'<a href="alterar_chamado.php">' . $dados['titulo_chamado'] . '</a>' . "</td>";

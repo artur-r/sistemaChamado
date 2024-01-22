@@ -10,7 +10,7 @@
 <?php
 
 include_once("conexao.php");
-
+session_start();
 
 $usuario    = $_POST['usuario'];
 $senha      = $_POST['senha'];

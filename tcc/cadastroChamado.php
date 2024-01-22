@@ -3,9 +3,10 @@
 session_start();
 
 require_once('config.php');
-if (!empty($_SESSION['usuario'])) {
-    header("location:index.php");
+if (empty($_SESSION['usuario'])) {
+    header("location:login.php");
 }
+
 ?>
 
 <!DOCTYPE html>
