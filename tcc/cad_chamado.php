@@ -17,12 +17,14 @@
 
 include_once("conexao.php");
 
+session_start();
 
 $titulo = $_POST['tituloChamado'];
 $descricao = $_POST['descricao'];
 $whats = $_POST['whats'];
-$usuario = "teste";
+$usuario = $_SESSION['usuario'];
 $categoria = $_POST['categoria'];
+$setor = $_SESSION['setor'];
 
 
 
@@ -35,7 +37,7 @@ $hora = date('G:i:s T');
 
 
 $sql = "INSERT INTO chamados (titulo_chamado, descricao, whats, data_abertura, hora_abertura, usuario_abertura, categoria_chamado, setor)
-        VALUES ('$titulo', '$descricao', '$whats', '$data', '$hora', '$usuario', '$categoria', 'suporte')";
+        VALUES ('$titulo', '$descricao', '$whats', '$data', '$hora', '$usuario', '$categoria', '$setor')";
         if (mysqli_query($conn, $sql)) {
             echo "Chamado cadastrado com sucesso";
       } else {

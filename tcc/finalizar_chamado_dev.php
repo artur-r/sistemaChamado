@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     $id_chamado = $_GET['id'];
 
     // Buscar dados do chamado
-    $consulta = "SELECT * FROM chamados WHERE id_chamado = $id_chamado";
+    $consulta = "SELECT * FROM chamados_dev WHERE id_chamado = $id_chamado";
     $resultado = mysqli_query($conn, $consulta);
 
 
@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
         
         if (mysqli_query($conn, $sql)) {
             // Remover o chamado da tabela chamados
-            $sql_delete = "DELETE FROM chamados WHERE id_chamado = $id_chamado";
+            $sql_delete = "DELETE FROM chamados_dev WHERE id_chamado = $id_chamado";
             mysqli_query($conn, $sql_delete);
             echo "Chamado finalizado com sucesso.";
         } else {
