@@ -11,8 +11,10 @@
 
 
     
-    <div>
-        <table>
+    <div class="container text-center">
+  
+
+        <table class="table table-dark table-striped-columns">
 
             <tr>
                 <th>Id</th>
@@ -23,6 +25,8 @@
                 <th>Hora abertura</th>
                 <th>Usuário criação</th>
                 <th>Categoria</th>
+                <th></th>
+                <th></th>
             </tr>
 
             <tr>
@@ -38,7 +42,7 @@
 
                 while ($dados = mysqli_fetch_assoc($resultado)) {
                     echo "<tr>";
-                    echo "<td>" . '<a href="editar_chamado_form.php">' . $dados['id_chamado'] . '</a>' . "</td>";
+                    echo "<td>" . '<a href="editar_chamado_form.php?id_chamado=' . $dados['id_chamado'] . '">' . $dados['id_chamado'] . '</a>' . "</td>";
                     echo "<td>" . $dados['titulo_chamado'] . "</td>";
                     echo "<td>" . $dados['descricao'] . "</td>";
                     echo "<td>" . $dados['whats'] . "</td>";
@@ -46,8 +50,8 @@
                     echo "<td>" . $dados['hora_abertura'] . "</td>";
                     echo "<td>" . $dados['usuario_abertura'] . "</td>";
                     echo "<td>" . $dados['categoria_chamado'] . "</td>";
-                    echo "<td><a href='mover_chamado_dev.php?id=" . $dados['id_chamado'] . "'>Mover</a></td>";
-                    echo "<td><a href='finalizar_chamado.php?id=" . $dados['id_chamado'] . "'>Finalizar</a></td>";
+                    echo "<td><a type='button' class='btn btn-primary' href='mover_chamado_dev.php?id=" . $dados['id_chamado'] . "'>Mover</a></td>";
+                    echo "<td><a type='button' class='btn btn-success' href='finalizar_chamado.php?id=" . $dados['id_chamado'] . "'><i class='fa-solid fa-check'></i> Finalizar</a></td>";
                     echo "</tr>";
                 }
 
@@ -61,7 +65,7 @@
             </tr>
         </table>
     </div>
- 
+    
 </body>
 
 </html>

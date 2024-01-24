@@ -13,7 +13,7 @@
 
 </nav>
     <div>
-        <table>
+        <table class="table">
 
             <tr>
                 <th>Id</th>
