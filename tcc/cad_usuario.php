@@ -14,7 +14,7 @@ $senha = $_POST['senha'];
 $hash = password_hash($senha,PASSWORD_DEFAULT);
 $setor = $_POST['setor'];
 
-$sql = "INSERT INTO chamados (login, senha, setor)
+$sql = "INSERT INTO usuarios (login, senha, setor)
         VALUES ('$usuario', '$hash', '$setor')";
         if (mysqli_query($conn, $sql)) {
             echo "<script> alert('Usuário cadastrado com sucesso') </script>";

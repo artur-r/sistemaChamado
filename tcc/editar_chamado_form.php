@@ -28,7 +28,7 @@ if (empty($_SESSION['usuario'])) {
 </head>
 
 <body>
-    <form action="cad_chamado.php" method="post">
+    <form action="finalizar_chamado.php" method="get">
         <div id="login">
             <div class="container container-login ">
                 <div id="login-row" class="row justify-content-center align-items-center">
@@ -60,7 +60,7 @@ if (empty($_SESSION['usuario'])) {
                                     <label for="floatingInput">Categoria:</label>
                                 </div>
                                 <div class="form-floating col-xs-8 mb-3">
-                                    <input type="text" class="form-control" placeholder="Apenas para finalizar" name="descricao" id="descricao">
+                                    <input type="text" class="form-control" placeholder="Apenas para finalizar" name="resolucao" id="descricao">
                                     <label for="floatingInput">Insira a resolução:</label>
                                 </div>
                                 <button type="submit" id="btnCriarChamado" class="text-center btn btn-success mt-4" style="width: 100%">Editar</button>

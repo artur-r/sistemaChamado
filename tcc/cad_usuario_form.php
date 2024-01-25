@@ -31,7 +31,7 @@
                                     <label for="floatingPassword">Senha</label>
                                 </div>
                                 <div>
-                                <select class="form-select" aria-label="setor" name="categoria">
+                                <select class="form-select" aria-label="setor" name="setor">
                                         <option value=""></option>
                                         <option value="administracao">Administração</option>
                                         <option value="sup">Suporte</option>

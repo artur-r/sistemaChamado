@@ -51,13 +51,15 @@
                     echo "<td>" . $dados['usuario_abertura'] . "</td>";
                     echo "<td>" . $dados['categoria_chamado'] . "</td>";
                     echo "<td><a type='button' class='btn btn-primary' href='mover_chamado_dev.php?id=" . $dados['id_chamado'] . "'>Mover</a></td>";
-                    echo "<td><a type='button' class='btn btn-success' href='finalizar_chamado.php?id=" . $dados['id_chamado'] . "'><i class='fa-solid fa-check'></i> Finalizar</a></td>";
+                    echo "<td><a type='button' class='btn btn-success' href='responder_chamado.php?id=" . $dados['id_chamado'] . "'><i class='fa-solid fa-check'></i>Finalizar</a></td>";
                     echo "</tr>";
                 }
 
                 if($_SESSION['setor'] == 'administracao'){
                     echo "<a href=\"cad_usuario_form.php\">Cadastrar novo usuário </p>";
                 }
+
+            
                 //pra verificar se a sessão está funcionando
                 // echo $_SESSION['usuario']
 
@@ -65,7 +67,7 @@
             </tr>
         </table>
     </div>
-    
+    <a href="logout.php"></a>
 </body>
 
 </html>

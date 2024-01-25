@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     // Buscar dados do chamado
     $consulta = "SELECT * FROM chamados WHERE id_chamado = $id_chamado";
     $resultado = mysqli_query($conn, $consulta);
-
+    $resolucao = $_GET['resolucao'];
 
     //novos dados para tabela de finalizados
     $usuario = $_SESSION['usuario'];
@@ -21,8 +21,8 @@ if (isset($_GET['id'])) {
 
     if ($dados = mysqli_fetch_assoc($resultado)) {
         // Inserir dados na tabela chamados_finalizados
-        $sql = "INSERT INTO chamados_finalizados (id_chamado, titulo_chamado, descricao, whats, data_abertura, hora_abertura, usuario_abertura, categoria_chamado, data_fechamento, hora_fechamento, usuario_fechamento)
-                VALUES ('{$dados['id_chamado']}', '{$dados['titulo_chamado']}', '{$dados['descricao']}', '{$dados['whats']}', '{$dados['data_abertura']}', '{$dados['hora_abertura']}', '{$dados['usuario_abertura']}', '{$dados['categoria_chamado']}','$data', '$hora', '$usuario')";
+        $sql = "INSERT INTO chamados_finalizados (id_chamado, titulo_chamado, descricao, whats, data_abertura, hora_abertura, usuario_abertura, categoria_chamado, data_fechamento, hora_fechamento, usuario_fechamento, resolucao)
+                VALUES ('{$dados['id_chamado']}', '{$dados['titulo_chamado']}', '{$dados['descricao']}', '{$dados['whats']}', '{$dados['data_abertura']}', '{$dados['hora_abertura']}', '{$dados['usuario_abertura']}', '{$dados['categoria_chamado']}','$data', '$hora', '$usuario', '$resolucao')";
         
         if (mysqli_query($conn, $sql)) {
             // Remover o chamado da tabela chamados

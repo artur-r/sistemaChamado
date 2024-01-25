@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Clamarie</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,13 +6,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Chamados abertos
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="index.php">suporte</a></li>
-            <li><a class="dropdown-item" href="chamados_dev.php">desenvolvimento</a></li>
-          </ul>
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Chamados abertos
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="index.php">suporte</a></li>
+          <li><a class="dropdown-item" href="chamados_dev.php">desenvolvimento</a></li>
+        </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="chamados_finalizados.php">Chamados Finalizados</a>
@@ -21,10 +21,16 @@
           <a class="nav-link" href="cadastroChamado.php">Criar chamado</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <?php
+          if ($_SESSION['setor'] == 'administracao') {
+            echo "<a href='cad_usuario_form.php' class='nav-link active' aria-current='page'>Cadastrar novo usuário </a>";
+          } else {
+            echo "<a href='components/acessonegado.php' id='usuario_des' class='nav-link' aria-current='page'>Cadastrar novo usuário </a>";
+          }
+          ?>
         </li>
         <li class="nav-item dropdown">
-        
+
       </ul>
     </div>
   </div>
